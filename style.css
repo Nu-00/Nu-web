@@ -66,44 +66,49 @@ h2 { margin-top:0; }
 }
 
 @media (max-width: 600px) {
-  .result-box {
-    position: static;
-    width: 100%;
-    margin-top: 20px;
-  }
-}
 
-@media (max-width: 600px) {
-
+  /* 全体を詰めすぎ防止 */
   .container {
     width: 95%;
     padding: 10px;
   }
 
-  /* カード系をスマホで縮小 */
+  /* カードを読みやすく */
   .section {
     padding: 12px;
+    margin-top: 12px;
+  }
+
+  /* メニュー縦並びで被り防止 */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  /* ボタンを押しやすく */
+  button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* 結果カードが被る問題対策 */
+  .result-box {
+    position: static !important;
+    width: 100%;
     margin-top: 15px;
   }
 
-  /* ログインカード（パスワードカード） */
-  .login-box {
-    position: static;   /* ← 右上固定を解除 */
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  /* 結果カード */
+  /* 右上固定系の解除（重要） */
+  .login-box,
   .result-box {
-    position: static;   /* ← 右上固定解除 */
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  /* ボタン調整 */
-  button {
-    width: 100%;
-    margin-top: 5px;
+    position: static !important;
   }
 }
-
