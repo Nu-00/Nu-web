@@ -14,9 +14,8 @@
 <body>
 
 <div class="container">
-  <h1>秘密のページ</h1>
+  <h1>code1</h1>
 
-  <!-- メニュー追加 -->
   <nav class="menu">
     <a href="index.html">ホーム</a>
     <a href="page2.html">3DS</a>
@@ -24,10 +23,52 @@
     <a href="page4.html" class="active">秘密</a>
   </nav>
 
-  <div class="section">
-    <p>lol</p>
-  </div>
-</div>
+  <!-- クイズ -->
+  <div id="quiz-container">
 
+    <div class="section question">
+      <h2>問題1</h2>
+      <p>セキュリティ三大要素は？</p>
+
+      <button onclick="checkAnswer(1, 'A')">A. 機密性、完全性、可用性</button>
+      <button onclick="checkAnswer(1, 'B')">B. 機密性、安全性、可用性</button>
+      <button onclick="checkAnswer(1, 'C')">C. 秘密性、完全性、実用性</button>
+
+      <p id="result1"></p>
+    </div>
+
+    <div class="section question">
+      <h2>問題2</h2>
+      <p>クラスBのIPアドレスは？</p>
+
+      <button onclick="checkAnswer(2, 'A')">A. 192.168.0.0/16</button>
+      <button onclick="checkAnswer(2, 'B')">B. 10.0.0.0/8</button>
+      <button onclick="checkAnswer(2, 'C')">C. 172.16.0.0/12</button>
+
+      <p id="result2"></p>
+    </div>
+
+    <div class="section question">
+      <h2>問題3</h2>
+      <p>共通鍵で配布する鍵の数は？</p>
+
+      <button onclick="checkAnswer(3, 'A')">A. 2n</button>
+      <button onclick="checkAnswer(3, 'B')">B. n/2(n+1)</button>
+      <button onclick="checkAnswer(3, 'C')">C. n(n-1)/2</button>
+
+      <p id="result3"></p>
+    </div>
+
+  </div>
+
+
+
+<script src="script.js"></script>
+
+<div class="section result-box">
+  <h2>結果</h2>
+  <p id="score">スコア: 0</p>
+  <p id="total">問題数: 3</p>
+</div>
 </body>
 </html>
