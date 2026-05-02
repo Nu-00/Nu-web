@@ -81,10 +81,10 @@ function checkAnswer(question, answer) {
   if (!answered[question]) {
     if (answer === correctAnswers[question]) {
       score++;
-      result.textContent = "正解";
+      result.textContent = "正解！";
       result.style.color = "green";
     } else {
-      result.textContent = "不正解";
+      result.textContent = "不正解...";
       result.style.color = "red";
     }
     answered[question] = true;
@@ -94,12 +94,3 @@ function checkAnswer(question, answer) {
 
   document.getElementById("score").textContent = "スコア: " + score;
 }
-
-window.addEventListener("load", () => {
-  const total = document.querySelectorAll(".question").length;
-  const totalElement = document.getElementById("total");
-
-  if (totalElement) {
-    totalElement.textContent = "問題数: " + total;
-  }
-});
