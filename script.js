@@ -1,7 +1,4 @@
 
-// =====================
-// SHA-256 ハッシュ関数
-// =====================
 async function hash(text) {
   const encoder = new TextEncoder();
   const data = encoder.encode(text);
@@ -10,9 +7,6 @@ async function hash(text) {
   return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
-// =====================
-// パスワードチェック
-// =====================
 async function checkPassword() {
   const input = document.getElementById("password").value;
   const inputHash = await hash(input);
