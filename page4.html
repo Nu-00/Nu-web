@@ -6,7 +6,7 @@
 
   <!-- 直アクセス防止 -->
   <script>
-    if (!sessionStorage.getItem("login")) {
+    if (!sessionStorage.getItem("page")) {
       location.href = "index.html";
     }
   </script>
@@ -37,6 +37,7 @@
       <button onclick="checkAnswer(1, 'C')">C. 秘密性、完全性、実用性</button>
 
       <p id="result1"></p>
+      <p id="explanation1" class="explanation"></p>
     </div>
 
     <div class="section question">
@@ -48,6 +49,7 @@
       <button onclick="checkAnswer(2, 'C')">C. 172.16.0.0/12</button>
 
       <p id="result2"></p>
+        <p id="explanation2" class="explanation"></p>
     </div>
 
     <div class="section question">
@@ -59,6 +61,7 @@
       <button onclick="checkAnswer(3, 'C')">C. n(n-1)/2</button>
 
       <p id="result3"></p>
+        <p id="explanation3" class="explanation"></p>
     </div>
 
         <div class="section question">
@@ -70,6 +73,7 @@
       <button onclick="checkAnswer(4, 'C')">C. ネットワーク層</button>
 
       <p id="result4"></p>
+        <p id="explanation4" class="explanation"></p>
     </div>
 
         <div class="section question">
@@ -81,6 +85,7 @@
       <button onclick="checkAnswer(5, 'C')">C. マスクROM</button>
 
       <p id="result5"></p>
+        <p id="explanation5" class="explanation"></p>
     </div>
 
         <div class="section question">
@@ -92,6 +97,7 @@
       <button onclick="checkAnswer(6, 'C')">C. FIFO方式</button>
 
       <p id="result6"></p>
+        <p id="explanation6" class="explanation"></p>
     </div>
 
         <div class="section question">
@@ -103,6 +109,7 @@
       <button onclick="checkAnswer(7, 'C')">C. 10000110</button>
 
       <p id="result7"></p>
+        <p id="explanation7" class="explanation"></p>
     </div>
 
         <div class="section question">
@@ -115,6 +122,7 @@
       <button onclick="checkAnswer(8, 'C')">C. XOR</button>
 
       <p id="result8"></p>
+        <p id="explanation8" class="explanation"></p>
     </div>
 
         <div class="section question">
@@ -126,6 +134,7 @@
       <button onclick="checkAnswer(9, 'C')">C. 標本化、量子化、符号化</button>
 
       <p id="result9"></p>
+        <p id="explanation9" class="explanation"></p>
     </div>
 
         <div class="section question">
@@ -138,6 +147,7 @@
       <button onclick="checkAnswer(10, 'C')">C. 強化学習</button>
 
       <p id="result10"></p>
+        <p id="explanation10" class="explanation"></p>
     </div>
 
   </div>
