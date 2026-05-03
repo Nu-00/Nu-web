@@ -1,4 +1,6 @@
-
+// =====================
+// SHA-256 ハッシュ関数
+// =====================
 async function hash(text) {
   const encoder = new TextEncoder();
   const data = encoder.encode(text);
@@ -7,6 +9,9 @@ async function hash(text) {
   return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
+// =====================
+// パスワードチェック
+// =====================
 async function checkPassword() {
   const input = document.getElementById("password").value;
   const inputHash = await hash(input);
@@ -32,33 +37,60 @@ async function checkPassword() {
 }
 
 // =====================
-// BGM処理
+// クイズシャッフル + BGM + 初期化
 // =====================
-window.addEventListener("load", () => {
-  const bgm = document.getElementById("bgm");
-  if (!bgm) return;
+document.addEventListener("DOMContentLoaded", () => {
 
-  bgm.muted = true;
-  bgm.volume = 0.3;
+  // ---------------------
+  // クイズシャッフル
+  // ---------------------
+  const container = document.getElementById("quiz-container");
 
-  bgm.play().catch(() => {});
+  if (container) {
+    const questions = Array.from(container.children);
 
-  document.addEventListener(
-    "click",
-    () => {
-      bgm.muted = false;
-      bgm.play();
-    },
-    { once: true }
-  );
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      bgm.pause();
-    } else {
-      bgm.play().catch(() => {});
+    // Fisher-Yates（偏りなしの完全ランダム）
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questions[i], questions[j]] = [questions[j], questions[i]];
     }
-  });
+
+    container.innerHTML = "";
+    questions.forEach(q => container.appendChild(q));
+
+    questions.forEach((q, index) => {
+      const h2 = q.querySelector("h2");
+      if (h2) h2.textContent = "問題" + (index + 1);
+    });
+  }
+
+  // ---------------------
+  // BGM処理
+  // ---------------------
+  const bgm = document.getElementById("bgm");
+  if (bgm) {
+    bgm.muted = true;
+    bgm.volume = 0.3;
+
+    bgm.play().catch(() => {});
+
+    document.addEventListener(
+      "click",
+      () => {
+        bgm.muted = false;
+        bgm.play();
+      },
+      { once: true }
+    );
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        bgm.pause();
+      } else {
+        bgm.play().catch(() => {});
+      }
+    });
+  }
 });
 
 // =====================
@@ -67,7 +99,7 @@ window.addEventListener("load", () => {
 let score = 0;
 const answered = {};
 
-// ★解説（完全そのまま維持）
+// 解説
 const explanations = {
   1: "機密性・完全性・可用性（CIA）は情報セキュリティの基本3要素。",
   2: "Cクラスは192.168.0.0/16\nAクラスは10.0.0.0/8\nBクラスは172.16.0.0/12。",
@@ -122,7 +154,5 @@ function checkAnswer(question, answer) {
   answered[question] = true;
 
   const scoreEl = document.getElementById("score");
-  if (scoreEl) {
-    scoreEl.textContent = `スコア: ${score}`;
-  }
+  if (scoreEl) scoreEl.textContent = `スコア: ${score}`;
 }
