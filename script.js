@@ -1,4 +1,36 @@
+
+// =====================
+// SHA-256 ハッシュ関数
+// =====================
+async function hash(text) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+// =====================
+// パスワードチェック
+// =====================
+async function checkPassword() {
+  const input = document.getElementById("password").value;
+  const inputHash = await hash(input);
+
+  // ★ここに本物のハッシュを入れる
+  const correctHash = "f333da4cfe442f0d6611b00c9ed34d01f2ce21142ac8f1d5cffefef8e5e0b7ae";
+
+  if (inputHash === correctHash) {
+    sessionStorage.setItem("login", "true");
+    window.location.href = "page4.html";
+  } else {
+    alert("パスワードが違います");
+  }
+}
+
+// =====================
 // BGM処理
+// =====================
 window.addEventListener("load", () => {
   const bgm = document.getElementById("bgm");
 
@@ -13,16 +45,6 @@ window.addEventListener("load", () => {
       bgm.play();
     }, { once: true });
 
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        const href = link.getAttribute("href");
-        if (href && href.startsWith("http")) {
-          bgm.pause();
-          bgm.currentTime = 0;
-        }
-      });
-    });
-
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
         bgm.pause();
@@ -32,8 +54,11 @@ window.addEventListener("load", () => {
     });
   }
 
+  // =====================
   // クイズシャッフル
+  // =====================
   const container = document.getElementById("quiz-container");
+
   if (container) {
     const questions = Array.from(container.children);
 
@@ -44,32 +69,21 @@ window.addEventListener("load", () => {
 
     questions.forEach(q => container.appendChild(q));
 
-    // 問題番号振り直し
     questions.forEach((q, index) => {
       const h2 = q.querySelector("h2");
-      h2.textContent = "問題" + (index + 1);
+      if (h2) h2.textContent = "問題" + (index + 1);
     });
   }
 });
 
-// ログイン処理
-function checkPassword() {
-  const input = document.getElementById("password").value;
-  const correctPassword = "883301";
-
-  if (input === correctPassword) {
-    sessionStorage.setItem("login", "true");
-    window.location.href = "page4.html";
-  } else {
-    alert("パスワードが違います");
-  }
-}
-
+// =====================
 // クイズ処理
+// =====================
 let score = 0;
 const answered = {};
 
 function checkAnswer(question, answer) {
+
   const correctAnswers = {
     1: "A",
     2: "C",
@@ -86,6 +100,7 @@ function checkAnswer(question, answer) {
   const result = document.getElementById("result" + question);
 
   if (!answered[question]) {
+
     if (answer === correctAnswers[question]) {
       score++;
       result.textContent = "正解！";
@@ -94,11 +109,15 @@ function checkAnswer(question, answer) {
       result.textContent = "不正解...";
       result.style.color = "red";
     }
+
     answered[question] = true;
+
   } else {
     result.textContent = "すでに回答済み";
   }
 
-  document.getElementById("score").textContent = "スコア: " + score;
-  document.getElementById("total").textContent = "問題数: " + Object.keys(correctAnswers).length;
+  const total = Object.keys(correctAnswers).length;
+
+  document.getElementById("score").textContent =
+    "スコア: " + score;
 }

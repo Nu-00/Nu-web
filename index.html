@@ -1,43 +1,56 @@
-<title>ぬぅの保管庫</title>
-<meta name="description" content="忘れそうなことを保管するサイト">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ホーム</title>
+
+  <title>ぬぅの保管庫</title>
+  <meta name="description" content="忘れそうなことを保管するサイト">
+  <meta name="google-site-verification" content="7DQaI1wjr1G2N5Cx8LHw3PKIMSeoiYdXOPalbtGYV7k">
+
   <link rel="stylesheet" href="style.css">
 </head>
-<script src="script.js"></script>
 
 <body>
-  <meta name="google-site-verification" content="7DQaI1wjr1G2N5Cx8LHw3PKIMSeoiYdXOPalbtGYV7k" />
+
+<!-- BGM -->
 <audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
+
 <div class="container">
+
   <h1>ぬぅの保管庫</h1>
 
+  <!-- メニュー -->
   <nav class="menu">
     <a href="index.html" class="active">ホーム</a>
     <a href="page2.html">3DS</a>
     <a href="page3.html">その他</a>
   </nav>
 
-<div class="link-box">
-  <a href="https://github.com/Nu-00" target="_blank">GitHub</a>
-  <a href="https://www.youtube.com/@Nu3Gぬぅ" target="_blank">YouTube</a>
-</div>
+  <!-- リンク -->
+  <div class="link-box">
+    <a href="https://github.com/Nu-00" target="_blank">GitHub</a>
+    <a href="https://www.youtube.com/@Nu3Gぬぅ" target="_blank">YouTube</a>
+  </div>
+
+  <!-- コンテンツ -->
   <div class="section">
     <h2>nothing</h2>
   </div>
+
 </div>
 
+<!-- ログイン -->
 <div class="section login-box">
   <h2>コード入力</h2>
   <input type="password" id="password" placeholder="8文字以上36文字以下">
   <button onclick="checkPassword()">送信</button>
 </div>
+
+<!-- JS -->
+<script src="script.js"></script>
 
 </body>
 </html>
