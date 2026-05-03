@@ -96,17 +96,19 @@ h2 {
   margin-top: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(135, 34, 34, 0.1);
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 250px;
+
 }
 
 
 /* =====================
    ログイン・結果カード
 ===================== */
-
+.login-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+}
 
 .result-box {
   position: absolute;
