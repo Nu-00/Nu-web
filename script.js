@@ -73,7 +73,14 @@ function checkAnswer(question, answer) {
   const correctAnswers = {
     1: "A",
     2: "C",
-    3: "C"
+    3: "C",
+    4: "B",
+    5: "B",
+    6: "C",
+    7: "A",
+    8: "A",
+    9: "C",
+    10: "C"
   };
 
   const result = document.getElementById("result" + question);
@@ -93,4 +100,5 @@ function checkAnswer(question, answer) {
   }
 
   document.getElementById("score").textContent = "スコア: " + score;
+  document.getElementById("total").textContent = "問題数: " + Object.keys(correctAnswers).length;
 }

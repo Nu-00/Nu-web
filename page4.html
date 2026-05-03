@@ -61,13 +61,92 @@
       <p id="result3"></p>
     </div>
 
+        <div class="section question">
+      <h2>問題4</h2>
+      <p>TCPはどの階層に属するか？</p>
+
+      <button onclick="checkAnswer(4, 'A')">A. セッション層</button>
+      <button onclick="checkAnswer(4, 'B')">B. トランスポート層</button>
+      <button onclick="checkAnswer(4, 'C')">C. ネットワーク層</button>
+
+      <p id="result4"></p>
+    </div>
+
+        <div class="section question">
+      <h2>問題5</h2>
+      <p>高速化を図るメモリは？</p>
+
+      <button onclick="checkAnswer(5, 'A')">A. フラッシュメモリ</button>
+      <button onclick="checkAnswer(5, 'B')">B. キャッシュメモリ</button>
+      <button onclick="checkAnswer(5, 'C')">C. マスクROM</button>
+
+      <p id="result5"></p>
+    </div>
+
+        <div class="section question">
+      <h2>問題6</h2>
+      <p>最も古くから存在するページを置き換える方式は？</p>
+
+      <button onclick="checkAnswer(6, 'A')">A. LFU方式</button>
+      <button onclick="checkAnswer(6, 'B')">B. LRU方式</button>
+      <button onclick="checkAnswer(6, 'C')">C. FIFO方式</button>
+
+      <p id="result6"></p>
+    </div>
+
+        <div class="section question">
+      <h2>問題7</h2>
+      <p>(132)₁₀を二進数で表したものはどれか</p>
+
+      <button onclick="checkAnswer(7, 'A')">A. 10000100</button>
+      <button onclick="checkAnswer(7, 'B')">B. 10000101</button>
+      <button onclick="checkAnswer(7, 'C')">C. 10000110</button>
+
+      <p id="result7"></p>
+    </div>
+
+        <div class="section question">
+      <h2>問題8</h2>
+      <p>1101 1011と0011 0110を計算すると0001 0010を得た</p>
+      <p>この結果を得るために使った論理演算はどれか</p>
+
+      <button onclick="checkAnswer(8, 'A')">A. AND</button>
+      <button onclick="checkAnswer(8, 'B')">B. OR</button>
+      <button onclick="checkAnswer(8, 'C')">C. XOR</button>
+
+      <p id="result8"></p>
+    </div>
+
+        <div class="section question">
+      <h2>問題9</h2>
+      <p>アナログからデジタルへ変換する際の処理の順番は？</p>
+
+      <button onclick="checkAnswer(9, 'A')">A. 符号化、量子化、標本化</button>
+      <button onclick="checkAnswer(9, 'B')">B. 量子化、標本化、符号化</button>
+      <button onclick="checkAnswer(9, 'C')">C. 標本化、量子化、符号化</button>
+
+      <p id="result9"></p>
+    </div>
+
+        <div class="section question">
+      <h2>問題10</h2>
+      <p>報酬を最大化するために行動を選択する学習方法は？
+      </p>
+
+      <button onclick="checkAnswer(10, 'A')">A. 教師あり学習</button>
+      <button onclick="checkAnswer(10, 'B')">B. 教師なし学習</button>
+      <button onclick="checkAnswer(10, 'C')">C. 強化学習</button>
+
+      <p id="result10"></p>
+    </div>
+
   </div>
 
   <!-- 結果 -->
   <div class="section result-box">
     <h2>結果</h2>
     <p id="score">スコア: 0</p>
-    <p id="total">問題数: 3</p>
+    <p id="total">問題数: 10</p>
   </div>
 
 </div>
