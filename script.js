@@ -1,4 +1,7 @@
 
+// =====================
+// SHA-256 ハッシュ関数
+// =====================
 async function hash(text) {
   const encoder = new TextEncoder();
   const data = encoder.encode(text);
@@ -7,10 +10,14 @@ async function hash(text) {
   return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
+// =====================
+// パスワードチェック
+// =====================
 async function checkPassword() {
   const input = document.getElementById("password").value;
   const inputHash = await hash(input);
 
+  // ★ここに本物のハッシュを入れる
   const correctHash = "f333da4cfe442f0d6611b00c9ed34d01f2ce21142ac8f1d5cffefef8e5e0b7ae";
 
   if (inputHash === correctHash) {
@@ -21,7 +28,9 @@ async function checkPassword() {
   }
 }
 
-
+// =====================
+// BGM処理
+// =====================
 window.addEventListener("load", () => {
   const bgm = document.getElementById("bgm");
 
@@ -45,6 +54,9 @@ window.addEventListener("load", () => {
     });
   }
 
+  // =====================
+  // クイズシャッフル
+  // =====================
   const container = document.getElementById("quiz-container");
 
   if (container) {
@@ -64,7 +76,9 @@ window.addEventListener("load", () => {
   }
 });
 
-
+// =====================
+// クイズ処理
+// =====================
 let score = 0;
 const answered = {};
 

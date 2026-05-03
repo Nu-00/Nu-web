@@ -1,7 +1,7 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: #c4c7c9;
+  background: #a1c9e4;
   font-size: 16px;
 }
 
@@ -27,6 +27,7 @@ h1 {
 
 h2 {
   margin-top: 0;
+  margin: 5px 0;
 }
 
 /* =====================
@@ -62,8 +63,8 @@ h2 {
 }
 
 .link-box a {
-  background: #1da1f2;
-  color: #fff;
+  background: #1a6fef;
+  color: #ffffff;
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
@@ -75,22 +76,37 @@ h2 {
    カード
 ===================== */
 .section {
-  background: #fff;
+  background: #c3c3c3;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(135, 34, 34, 0.1);
 }
 
-/* =====================
-   ログイン・結果カード
-===================== */
-.login-box {
+.special-card {
+  background: linear-gradient(135deg, #6883ce, #1c1f2a);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.main-content {
+  background: #f5f3f3;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(135, 34, 34, 0.1);
   position: absolute;
   top: 20px;
   right: 20px;
   width: 250px;
 }
+
+
+/* =====================
+   ログイン・結果カード
+===================== */
+
 
 .result-box {
   position: absolute;
