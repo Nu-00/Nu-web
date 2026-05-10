@@ -23,6 +23,7 @@
     <a href="page2.html">3DS</a>
     <a href="page3.html">その他</a>
     <a href="page4.html" class="active">秘密</a>
+    <a href="page6.html">code</a>
   </nav>
 
   <!-- クイズ -->
@@ -174,7 +175,7 @@
         <p id="explanation12" class="explanation"></p>
     </div>
 
-            <div class="section question">
+      <div class="section question">
       <h2>問題13</h2>
       <p>10Mビット/秒の回線を使い、120Mバイトのデータを送信するのにおよそ何秒かかるか</p> 
       <button onclick="checkAnswer(13, 'A')">A. 96秒</button>
@@ -185,13 +186,46 @@
         <p id="explanation13" class="explanation"></p>
     </div>
 
+      <div class="section question">
+      <h2>問題14</h2>
+      <p>DNSとは何か</p> 
+      <button onclick="checkAnswer(14, 'A')">A. FQDNに対応するIPアドレスまたはその逆を応答するシステム</button>
+      <button onclick="checkAnswer(14, 'B')">B. ログイン成功した際の認証情報を一元管理し、次回のログイン時に使用するシステム</button>
+      <button onclick="checkAnswer(14, 'C')">C. 外部からの不正アクセスを検出するシステム</button>
+
+      <p id="result14"></p>
+        <p id="explanation14" class="explanation"></p>
+    </div>
+
+      <div class="section question">
+      <h2>問題15</h2>
+      <p>ハイブリッド暗号方式を説明しているものはどれか</p> 
+      <button onclick="checkAnswer(15, 'A')">A. 同じ鍵を使用して暗号化を行う方式</button>
+      <button onclick="checkAnswer(15, 'B')">B. 公開鍵暗号と共通鍵暗号方式を組み合わせた方式</button>
+      <button onclick="checkAnswer(15, 'C')">C. 二つの異なる鍵である公開鍵と秘密鍵を使用して暗号化を行う方式</button>
+
+      <p id="result15"></p>
+        <p id="explanation15" class="explanation"></p>
+    </div>
+
+          <div class="section question">
+      <h2>問題16</h2>
+      <p>DNSに使われるプロトコルはどれか</p> 
+      <button onclick="checkAnswer(16, 'A')">A. TCP</button>
+      <button onclick="checkAnswer(16, 'B')">B. UDP</button>
+      <button onclick="checkAnswer(16, 'C')">C. ICMP</button>
+
+      <p id="result16"></p>
+        <p id="explanation16" class="explanation"></p>
+    </div>
+
   </div>
 
   <!-- 結果 -->
   <div class="section result-box">
     <h2>結果</h2>
     <p id="score">スコア: 0</p>
-    <p id="total">問題数: 13</p>
+    <p id="total">問題数: 16</p>
   </div>
 
 </div>
