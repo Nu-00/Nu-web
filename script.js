@@ -117,6 +117,8 @@ const explanations = {
   14: "DNS（Domain Name System）は、FQDN（完全修飾ドメイン名）に対応するIPアドレスまたはその逆を応答するシステム。",
   15: "公開鍵暗号方式は公開鍵と秘密鍵を使い、共通鍵暗号方式は2つの同じ鍵(共通鍵)を使用する方式\nハイブリッド暗号方式では、暗号化に共通鍵暗号方式を使い、送信に公開鍵暗号方式を使うことで\n早くて安全に送信することができる",
   16: "",
+  17: "",
+  18: ""
 };
 
 const correctAnswers = {
@@ -135,7 +137,9 @@ const correctAnswers = {
   13: "A",
   14: "A",
   15: "B",
-  16: "B"
+  16: "B",
+  17: "C",
+  18: "B",
 };
 
 function checkAnswer(question, answer) {
